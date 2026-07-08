@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum Vitae - Desarrollador Full Stack & Líder Técnico</title>
+    <!-- Google Fonts: Outfit e Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Menú de Navegación Flotante -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-accent">&lt;</span>CV<span class="logo-accent">/&gt;</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio" class="active"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a href="#perfil"><i class="fa-solid fa-user"></i> Perfil</a></li>
+            <li><a href="#habilidades"><i class="fa-solid fa-code"></i> Habilidades</a></li>
+            <li><a href="#experiencia"><i class="fa-solid fa-briefcase"></i> Experiencia</a></li>
+            <li><a href="#valor"><i class="fa-solid fa-chart-line"></i> Valor Contable</a></li>
+            <li><a href="#contacto"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+        </ul>
+        <button id="btn-print-nav" class="btn-primary btn-nav-download" onclick="exportarPDF()">
+            <i class="fa-solid fa-file-pdf"></i> Descargar PDF
+        </button>
+    </nav>
+
+    <!-- Fondo de Gradientes Dinámicos -->
+    <div class="background-glows">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="glow glow-3"></div>
+    </div>
+
+    <!-- Sección Inicio (Hero) -->
+    <header id="inicio" class="hero-section">
+        <div class="hero-content">
+            <span class="badge">Disponible para Nuevos Retos</span>
+            <h1 class="glitch-text" data-text="TU NOMBRE COMPLETO">Cristhian Camilo Perdomo Rubiano</h1>
+            <h2 class="sub-title">Desarrollador de Software Full Stack & Líder de Proyecto</h2>
+            <p class="hero-description">
+                Especialista en desarrollo backend y frontend, automatización de flujos de trabajo y gestión de bases de datos críticas. Experiencia liderando equipos de desarrollo tecnológico y asegurando la calidad del software (QA) bajo altos estándares de estrés y volumen de datos.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contacto" class="btn-primary"><i class="fa-solid fa-paper-plane"></i> Contactar</a>
+                <button onclick="exportarPDF()" class="btn-secondary"><i class="fa-solid fa-download"></i> Descargar CV (PDF)</button>
+            </div>
+            
+            <!-- Tarjeta rápida de contacto -->
+            <div class="quick-contact-grid">
+                <div class="quick-contact-card">
+                    <i class="fa-solid fa-phone text-accent"></i>
+                    <div>
+                        <span class="label">Teléfono</span>
+                        <span class="value">55 1604 8263</span>
+                    </div>
+                </div>
+                <div class="quick-contact-card">
+                    <i class="fa-solid fa-envelope text-accent"></i>
+                    <div>
+                        <span class="label">Email</span>
+                        <span class="value">tianper89@gmail.com</span>
+                    </div>
+                </div>
+                <div class="quick-contact-card">
+                    <i class="fa-solid fa-location-dot text-accent"></i>
+                    <div>
+                        <span class="label">Ubicación</span>
+                        <span class="value">Ciudad de México, MX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Perfil y Enfoque -->
+    <section id="perfil" class="section-container">
+        <h2 class="section-title">Sobre Mí & Enfoque</h2>
+        <div class="about-grid">
+            <div class="about-card text-card">
+                <h3>Perfil Profesional</h3>
+                <p>
+                    Ingeniero y Desarrollador de Software con más de 10 años de trayectoria ascendente en el desarrollo de sistemas cartográficos, geográficos y administrativos del <strong>Instituto Nacional Electoral (INE)</strong> a nivel nacional.
+                </p>
+                <p>
+                    Mi enfoque principal se centra en la <strong>eficiencia, seguridad y precisión</strong>. He diseñado e implementado sistemas utilizados en las 32 entidades del país, garantizando siempre la consistencia de los datos en SQL server, MySQL, PostgreSQL y Oracle, y liderando equipos de trabajo bajo metodologías ágiles y estándares de calidad estrictos.
+                </p>
+                 <p>
+                   Manejo lenguajes de programación<strong>PHP, JS, Python, JAVA, .NET</strong>. A lo largo de mi experiencia laboral en el rubro gubernamental, he desarollado aplicaciones standalone y web, para agilizar y automatizar la actualización de la cartografia electoral a nivel local y federal,
+                   Ubica tu casilla para procesos federales y locales, despliegue de modulos itinerantes y tiempos de recolección de los paquetes electorales.
+                </p>
+            </div>
+            <div class="about-card metrics-card">
+                <h3>Estadísticas de Trayectoria</h3>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <span class="metric-num">32</span>
+                        <span class="metric-label">Estados Cubiertos en Soporte, Mantenimiento y Capacitación</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-num">100%</span>
+                        <span class="metric-label">Integridad de BD PostgreSQL e Inyecciones de Datos</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-num">4+</span>
+                        <span class="metric-label">Sistemas Críticos Desarrollados (SAMGE, SAR, Ubica tu casilla, Modulos itinerantes, Sistema de Distritación y demarcaciones nacionales.)</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-num">QA</span>
+                        <span class="metric-label">Experto en Pruebas de Estrés e Integrales</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Habilidades (Interactivas) -->
+    <section id="habilidades" class="section-container">
+        <h2 class="section-title">Habilidades Técnicas</h2>
+        
+        <!-- Categorías de Habilidades -->
+        <div class="skills-tabs">
+            <button class="tab-btn active" onclick="filtrarHabilidades('todas')">Todas</button>
+            <button class="tab-btn" onclick="filtrarHabilidades('backend')">Backend & BD</button>
+            <button class="tab-btn" onclick="filtrarHabilidades('frontend')">Frontend & UI</button>
+            <button class="tab-btn" onclick="filtrarHabilidades('qa')">QA & Pruebas</button>
+            <button class="tab-btn" onclick="filtrarHabilidades('gestion')">Gestión & DevOps</button>
+        </div>
+
+        <div class="skills-grid" id="skills-container">
+            <!-- Bases de Datos -->
+            <div class="skill-card" data-category="backend">
+                <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+                <h3>PostgreSQL & SQL</h3>
+                <p>Gestión, administración, migración, respaldo y optimización de bases de datos relacionales en oficinas centrales y juntas locales.</p>
+                <div class="skill-level"><span style="width: 95%"></span></div>
+            </div>
+            <div class="skill-card" data-category="backend">
+                <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
+                <h3>Arquitectura de Microservicios</h3>
+                <p>Diseño y consumo de servicios backend robustos, desacoplados y eficientes para el procesamiento de información.</p>
+                <div class="skill-level"><span style="width: 90%"></span></div>
+            </div>
+            <!-- QA -->
+            <div class="skill-card" data-category="qa">
+                <div class="skill-icon"><i class="fa-solid fa-bug-slash"></i></div>
+                <h3>QA & Pruebas de Estrés</h3>
+                <p>Diseño e implementación de planes de prueba integrales en todas las fases de desarrollo para garantizar cero defectos.</p>
+                <div class="skill-level"><span style="width: 95%"></span></div>
+            </div>
+            <div class="skill-card" data-category="qa">
+                <div class="skill-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                <h3>Normativa MPTIC (INE)</h3>
+                <p>Cumplimiento de estándares de calidad de software gubernamentales y auditoría técnica de sistemas en alto volumen.</p>
+                <div class="skill-level"><span style="width: 85%"></span></div>
+            </div>
+            <!-- Frontend -->
+            <div class="skill-card" data-category="frontend">
+                <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+                <h3>Desarrollo Frontend</h3>
+                <p>Creación de interfaces web responsivas, dinámicas e intuitivas con enfoque de usabilidad para operadores del sistema. Usando tecnologias modernas para la mejor experiencia de usuarios.</p>
+                <div class="skill-level"><span style="width: 88%"></span></div>
+            </div>
+            <!-- Gestión y DevOps -->
+            <div class="skill-card" data-category="gestion">
+                <div class="skill-icon"><i class="fa-solid fa-users-gear"></i></div>
+                <h3>Liderazgo de Equipos</h3>
+                <p>Dirección y coordinación de programadores para asegurar entregas a tiempo que cumplan con los requerimientos del usuario final.</p>
+                <div class="skill-level"><span style="width: 90%"></span></div>
+            </div>
+            <div class="skill-card" data-category="gestion">
+                <div class="skill-icon"><i class="fa-solid fa-terminal"></i></div>
+                <h3>DevOps & SysAdmin</h3>
+                <p>Administración y despliegue en servidores Linux, Windows Server, Oracle y configuración de entornos web XAMPP.</p>
+                <div class="skill-level"><span style="width: 85%"></span></div>
+            </div>
+            <div class="skill-card" data-category="gestion">
+                <div class="skill-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                <h3>Capacitación & Soporte</h3>
+                <p>Formación a usuarios finales en las 32 entidades del país y resolución rápida de incidencias críticas en producción.</p>
+                <div class="skill-level"><span style="width: 95%"></span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Experiencia (Línea de tiempo) -->
+    <section id="experiencia" class="section-container">
+        <h2 class="section-title">Experiencia Profesional</h2>
+        <div class="timeline">
+            
+            <!-- Empleo 1 (Líder Técnico) -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Ene 2025 - Presente</div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3>Líder de Proyecto / Desarrollador Full-Stack</h3>
+                        <span class="company">INE (Giro Público)</span>
+                    </div>
+                    <p class="role-specialty">Especialidad: Desarrollo de Software</p>
+                    <ul class="duties-list">
+                        <li><strong>Liderazgo Técnico:</strong> Dirección de equipo de trabajo para desarrollar los sistemas requeridos por áreas internas, automatizando procesos operativos complejos.</li>
+                        <li><strong>Desarrollo Core:</strong> Creación de microservicios backend y frontend del sistema SAMGE, Casos AMGE, y Sistema de Aplicación del Reseccionamiento (SAR).</li>
+                        <li><strong>Administración PostgreSQL:</strong> Garantizar la persistencia y rendimiento óptimo en las bases de datos de las 32 juntas locales y oficinas centrales del país.</li>
+                        <li><strong>Aseguramiento de Calidad:</strong> Realización de pruebas integrales y de estrés al software para asegurar su correcto funcionamiento en entornos de alta demanda.</li>
+                    </ul>
+                    <div class="timeline-footer">
+                        <span class="d-detail"><i class="fa-solid fa-users"></i> Liderazgo de Equipo</span>
+                        <!-- <span class="d-detail"><i class="fa-solid fa-money-bill-wave"></i> Rango salarial: $38,500</span> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empleo 2 (Programador SIG) -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Ene 2024 - Dic 2024</div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3>Programador de Sistemas de Info. Geográfico Electorales</h3>
+                        <span class="company">INE (Giro Público)</span>
+                    </div>
+                    <p class="role-specialty">Especialidad: Desarrollo de Software | Salida: Promoción a nuevo cargo</p>
+                    <ul class="duties-list">
+                        <li><strong>Sistemas Cartográficos:</strong> Administración y desarrollo de sistemas cartográficos clave para la actualización cartográfica federal del país.</li>
+                        <li><strong>Fullstack:</strong> Creación de frontend y backend para responder ágilmente a los requerimientos de oficinas centrales y las 32 juntas locales.</li>
+                        <li><strong>Capacitación Nacional:</strong> Capacitación integral de usuarios finales de las 32 entidades de la República en los aplicativos desarrollados.</li>
+                        <li><strong>QA Sistemático:</strong> Implementación de pruebas en fases de análisis, diseño y construcción para la erradicación preventiva de fallos.</li>
+                    </ul>
+                    <div class="timeline-footer">
+                        <span class="d-detail"><i class="fa-solid fa-map-location-dot"></i> Sistemas Cartográficos</span>
+                        <!-- <span class="d-detail"><i class="fa-solid fa-money-bill-wave"></i> Rango salarial: $35,000</span> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empleo 3 (QA de Alto Volumen) -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Sep 2023 - Dic 2023</div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3>Prof. en Pruebas de Sistemas Cartográficos en Alto Volumen</h3>
+                        <span class="company">INE (Giro Público)</span>
+                    </div>
+                    <p class="role-specialty">Especialidad: Desarrollo de Software | Salida: Promoción a nuevo cargo</p>
+                    <ul class="duties-list">
+                        <li><strong>Cumplimiento Normativo MPTIC:</strong> Auditoría y estructuración de procesos de prueba conforme a los lineamientos MPTIC del INE, asegurando el óptimo desempeño de la nueva plataforma de bases de datos cartográficas.</li>
+                        <li><strong>Integración de Base de Datos:</strong> Verificación y pruebas exhaustivas en el volumen masivo de datos electorales del país.</li>
+                        <li><strong>Desarrollo de Mejoras:</strong> Implementación de requerimientos frontend y backend adicionales demandados por juntas locales.</li>
+                    </ul>
+                    <div class="timeline-footer">
+                        <span class="d-detail"><i class="fa-solid fa-vial"></i> QA & Normativas</span>
+                        <!-- <span class="d-detail"><i class="fa-solid fa-money-bill-wave"></i> Rango salarial: $32,000</span> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empleo 4 (Desarrollador) -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Nov 2015 - Ago 2023</div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3>Desarrollador de Sistemas Geográficos Electorales</h3>
+                        <span class="company">INE (Giro Público)</span>
+                    </div>
+                    <p class="role-specialty">Especialidad: Desarrollo de Software | Salida: Promoción a nuevo cargo</p>
+                    <ul class="duties-list">
+                        <li><strong>Automatización Cartográfica:</strong> Creación de aplicaciones dedicadas a automatizar y agilizar las tareas cotidianas de cartografía electoral.</li>
+                        <li><strong>Despliegue y SysAdmin:</strong> Administración y deploy sobre servidores web XAMPP en sistemas Linux, Windows Server y Oracle.</li>
+                        <li><strong>PostgreSQL & SQL:</strong> Gestión de bases de datos, planes de migración de datos, copias de seguridad (backup) y restauración en las 32 juntas locales.</li>
+                    </ul>
+                    <div class="timeline-footer">
+                        <span class="d-detail"><i class="fa-solid fa-gears"></i> Automatización & BD</span>
+                        <!-- <span class="d-detail"><i class="fa-solid fa-money-bill-wave"></i> Rango salarial: $25,000</span> -->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Sección Especial: Valor para un Despacho Contable -->
+    <section id="valor" class="section-container value-section">
+        <h2 class="section-title">¿Qué valor aporto?</h2>
+        <p class="section-subtitle">Cómo un perfil especializado en ingeniería de software y bases de datos exponenciará la eficiencia de los requerimientos y desarrollos.</p>
+        
+        <div class="value-grid">
+            <div class="value-card">
+                <div class="value-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                <h3>Automatización de Tareas Repetitivas</h3>
+                <p> Mi especialidad es crear programas a la medida para automatizar flujos de procesos reiterativos de entrada de datos y cruce de información, minimizando las horas hombre invertidas.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Seguridad y Respaldo de Datos</h3>
+                <p>En el INE gestiono bases de datos masivas en PostgreSQL garantizando la máxima seguridad. Me aseguraré de que la información esté organizada, protegida y con copias de seguridad blindadas.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fa-solid fa-check-double"></i></div>
+                <h3>Cero Errores (Metodología de QA)</h3>
+                <p>Mi experiencia en pruebas de sistemas de alta demanda garantiza que los programas que desarrolle funcionen con total precisión matemática y libres de fallas operativas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="section-container">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-layout">
+            
+            <div class="contact-info">
+                <h3>¿Listo para colaborar?</h3>
+                <p>Ponte en contacto conmigo para discutir cómo mis habilidades de desarrollo y automatización de procesos pueden ayudar a optimizar el flujo de trabajo.</p>
+                
+                <div class="contact-links-list">
+                    <a href="tel:5554909217" class="contact-link-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>55 1604 8263</span>
+                    </a>
+                    <a href="mailto:tu.correo@email.com" class="contact-link-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>tianper89@gmail.com</span>
+                    </a>
+                    <a href="https://wa.me/525516048263" target="_blank" class="contact-link-item whatsapp-accent">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Enviar mensaje por WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <form id="contact-form" onsubmit="enviarMensajeSimulado(event)">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" required placeholder="Escribe tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" required placeholder="tu.nombre@empresa.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" rows="4" required placeholder="Hola, nos interesa tu perfil para ser parte de nuestro equipo de trabajo y hacer la diferencia...."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary form-submit-btn">
+                        <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje
+                    </button>
+                    <div id="form-feedback" class="form-feedback hidden"></div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2026 <b>Crishtian Camilo Perdomo Rubiano </b>Desarrollador de Software Full Stack & Líder Técnico.</p>
+        <p class="footer-sub">Creado con HTML, CSS & JavaScript. Listo para hostear en GitHub Pages.</p>
+    </footer>
+
+    <!-- Script de Interacciones -->
+    <script src="script.js"></script>
+</body>
+</html>
