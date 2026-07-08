@@ -339,18 +339,23 @@
             </div>
 
             <div class="contact-form-container">
-                <form id="contact-form" onsubmit="enviarMensajeSimulado(event)">
+                <form id="contact-form" onsubmit="enviarMensaje(event)">
+                    <!-- Configuración de Web3Forms: Reemplaza TU_ACCESS_KEY por la que obtengas gratis de web3forms.com -->
+                    <input type="hidden" name="access_key" value="28515149-fdc7-486b-9c07-fbb7b2e15a07">
+                    <input type="hidden" name="subject" value="Nuevo Mensaje de Contacto - CV Web">
+                    <input type="hidden" name="from_name" value="CV Crishtian Perdomo">
+                    
                     <div class="form-group">
                         <label for="name">Nombre</label>
-                        <input type="text" id="name" required placeholder="Escribe tu nombre">
+                        <input type="text" id="name" name="name" required placeholder="Escribe tu nombre">
                     </div>
                     <div class="form-group">
                         <label for="email">Correo Electrónico</label>
-                        <input type="email" id="email" required placeholder="tu.nombre@empresa.com">
+                        <input type="email" id="email" name="email" required placeholder="tu.nombre@empresa.com">
                     </div>
                     <div class="form-group">
                         <label for="message">Mensaje</label>
-                        <textarea id="message" rows="4" required placeholder="Hola, nos interesa tu perfil para ser parte de nuestro equipo de trabajo y hacer la diferencia...."></textarea>
+                        <textarea id="message" name="message" rows="4" required placeholder="Hola, nos interesa tu perfil para ser parte de nuestro equipo de trabajo y hacer la diferencia...."></textarea>
                     </div>
                     <button type="submit" class="btn-primary form-submit-btn">
                         <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje
