@@ -89,39 +89,80 @@ function exportarPDF() {
 }
 
 /**
- * 4. Simulación del Formulario de Contacto
- * Valida y simula el envío del formulario con animaciones de éxito.
+ * 4. Envío del Formulario de Contacto (Web3Forms API)
+ * Envía la información real a tu correo electrónico de forma asíncrona.
  */
-function enviarMensajeSimulado(event) {
+function enviarMensaje(event) {
     event.preventDefault();
     
     const form = document.getElementById('contact-form');
     const feedback = document.getElementById('form-feedback');
     const submitBtn = form.querySelector('.form-submit-btn');
     
-    // Deshabilitar botón durante el proceso
+    // Capturar datos del formulario
+    const formData = new FormData(form);
+    
+    // Verificar si el usuario ha configurado la API Key
+    const accessKey = formData.get('access_key');
+    if (accessKey === 'TU_ACCESS_KEY_AQUI' || accessKey.trim() === '') {
+        feedback.classList.remove('hidden');
+        feedback.style.background = 'rgba(239, 68, 68, 0.15)';
+        feedback.style.border = '1px solid #ef4444';
+        feedback.style.color = '#f87171';
+        feedback.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Por favor, configura tu <strong>access_key</strong> gratuita de Web3Forms en el archivo <code>index.html</code>.';
+        return;
+    }
+    
+    // Deshabilitar botón durante el envío
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Enviando...';
     
-    // Simular retraso de red (1.5 segundos)
-    setTimeout(() => {
+    // Convertir datos a JSON
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+    
+    // Enviar a la API de Web3Forms
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: json
+    })
+    .then(async (response) => {
+        let res = await response.json();
+        if (response.status === 200) {
+            // Éxito al enviar
+            feedback.classList.remove('hidden');
+            feedback.removeAttribute('style'); // Remover estilos de error temporales
+            feedback.classList.add('success');
+            feedback.innerHTML = '<i class="fa-solid fa-circle-check"></i> ¡Mensaje enviado con éxito! Te llegará una notificación a tu correo y te contactaré pronto.';
+            form.reset();
+        } else {
+            // Error devuelto por la API
+            throw new Error(res.message || 'Error del servidor');
+        }
+    })
+    .catch(error => {
+        console.error('Error al enviar:', error);
+        feedback.classList.remove('hidden');
+        feedback.style.background = 'rgba(239, 68, 68, 0.15)';
+        feedback.style.border = '1px solid #ef4444';
+        feedback.style.color = '#f87171';
+        feedback.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> Hubo un problema al enviar: ${error.message}. Inténtalo de nuevo.`;
+    })
+    .finally(() => {
+        // Reactivar botón
         submitBtn.disabled = false;
         submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Enviar Mensaje';
         
-        // Mostrar mensaje de éxito
-        feedback.classList.remove('hidden');
-        feedback.classList.add('success');
-        feedback.innerHTML = '<i class="fa-solid fa-circle-check"></i> ¡Mensaje enviado con éxito! Me pondré en contacto contigo a la brevedad.';
-        
-        // Limpiar el formulario
-        form.reset();
-        
-        // Ocultar feedback después de 5 segundos
+        // Limpiar el estado después de 7 segundos
         setTimeout(() => {
             feedback.classList.add('hidden');
+            feedback.removeAttribute('style');
             feedback.classList.remove('success');
             feedback.innerHTML = '';
-        }, 5000);
-        
-    }, 1500);
+        }, 7000);
+    });
 }
